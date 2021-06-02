@@ -4,6 +4,7 @@
 
 #include "Components/CapsuleComponent.h"
 #include "ToonTanks/Actors/ProjectileBase.h"
+#include "Kismet/GameplayStatics.h"
 
 
 #include "CoreMinimal.h"
@@ -38,8 +39,14 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Projectile type", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<AProjectileBase> ProjectileClass;
 
-	UPROPERTY(EditAnywhere, Category = "Projectile type")
+	UPROPERTY(EditAnywhere, Category = "Effects")
 	UParticleSystem* DeathParticle;
+
+	UPROPERTY(EditAnywhere, Category = "Effects")
+	USoundBase* DeathSound;
+
+	UPROPERTY(EditAnywhere, Category = "Effects")
+	TSubclassOf<UMatineeCameraShake> DeathShake;
 
 public:
 	// Sets default values for this pawn's properties

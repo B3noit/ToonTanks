@@ -18,14 +18,16 @@ class TOONTANKS_API UHealthComponent : public UActorComponent
 
 private: 
 
-	UPROPERTY(EditAnywhere)
-	float DefaultHealth = 100.0f;
+
 
 	float Health = 0.0f;
 
 	AGameModeTank* GameModeRef;
 
 public:	
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float DefaultHealth = 100.0f;
 	// Sets default values for this component's properties
 	UHealthComponent();
 

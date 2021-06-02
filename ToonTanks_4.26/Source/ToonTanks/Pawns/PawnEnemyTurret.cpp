@@ -31,9 +31,10 @@ void APawnEnemyTurret::Tick(float DeltaTime)
 void APawnEnemyTurret::CheckFireCondition()
 {
 	//Checking if the player Exist and is not dead
-	if (!PlayerPawn || PlayerPawn->GetIsPlayerAlive())
+	if (!PlayerPawn || !PlayerPawn->GetIsPlayerAlive())
 	{
 		return;
+		//UE_LOG(LogTemp, Warning, TEXT("Fire Condition fail"));
 	}
 
 	//Checking if the player is in the range of the turret
@@ -62,4 +63,5 @@ void APawnEnemyTurret::HandleDestruction()
 {
 	//Call base pawn class HandleDestruction to play effects.
 	Super::HandleDestruction();
+	Destroy();
 }
